@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/bootswatch/lumen/bootstrap.min.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="~/favicon.ico" />
+</head>
+<body>
+    <div class="container">
+
+        @*Navbar/Header*@
+        <div class="row text-center" style="margin-top:20px">
+            <div class="col-lg-3">
+
+                @*Html*@
+                @*<a href="/Test1/Home" class="btn btn-info">Home</a>*@
+
+                @*HTML Helper*@
+                @*<div class="btn btn-info">
+                    @Html.ActionLink("Home","Home","Test1")
+                </div>*@
+
+                @*Tag Helper*@
+                <a asp-controller="Test1" asp-action="Home" class="btn btn-info">Home</a>
+            </div>
+            <div class="col-lg-3">
+                <a href="~/About" class="btn btn-info">About</a>
+            </div>
+            <div class="col-lg-3">
+                <a href="~/Contact" class="btn btn-info">Contact</a>
+            </div>
+            <div class="col-lg-3">
+                <a href="~/Gallery" class="btn btn-info">Gallery</a>
+            </div>
+        </div>
+
+
+        <center>
+            @RenderSection("MySection",required : false)
+        </center>
+
+        @*Content/Body*@
+        @RenderBody()
+
+        @*Footer*@
+        <div class="row" style="margin-top:150px">
+            <div class="col-lg-12 text-center">
+                <h4>
+                    This site Designed By | Designer CopyRight @@ | Sharp <span id="x">
+                        <script>document.getElementById("x").textContent = new Date().getFullYear</script>
+                    </span>
+                </h4>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

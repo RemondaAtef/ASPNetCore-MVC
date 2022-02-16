@@ -1,0 +1,31 @@
+﻿
+@{
+    
+    ViewBag.Title = "Home";
+}
+
+
+<body>
+        @*Content/Body*@
+        <div class="row" style="margin-top:50px">
+            <div class="col-lg-12 text-center">
+                <h1 class="jumbotron">Welcome to Home Page</h1>
+            </div>
+        </div>
+    
+      @section MySection{ 
+
+          <br/> <br/>  
+          <img src="~/Imgs/1.jpg" width="150" height="150" />  
+      }      
+           
+
+    @*Partial View*@
+
+      @* @await Html.PartialAsync("~/Views/Partials/Home/home_P1.cshtml")*@
+
+     @{ 
+         await Html.RenderPartialAsync("~/Views/Partials/Home/home_P1.cshtml");
+      }
+</body>
+
